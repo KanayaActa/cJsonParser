@@ -13,6 +13,7 @@
 #include "json_lexer.h"
 #include "json_parser_stack.h"
 #include "json_value.h"
+#include "debug.h"
 
 void	json_advance(t_json_parser_stack *ps)
 {

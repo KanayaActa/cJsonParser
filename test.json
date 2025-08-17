@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "number": 42,
+  "boolean": true,
+  "null_value": null,
+  "array": [1, 2, 3, "hello"],
+  "object": {
+    "nested": "value",
+    "another": 123
+  }
+}

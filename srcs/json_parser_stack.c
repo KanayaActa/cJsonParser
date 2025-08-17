@@ -14,6 +14,7 @@
 #include "json_lexer.h"
 #include "json_parser_stack.h"
 #include "json_value.h"
+#include "debug.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -40,7 +41,11 @@ t_json_value	*json_stack_parse(t_json_parser_stack *ps)
 			ps->had_error = 1;
 			break ;
 		}
+		
+		// デバッグ出力
+		DEBUG_DUMP_STACK(ps);
 		handle_token(ps);
+		DEBUG_DUMP_STACK(ps);
 	}
 	if (ps->had_error || ps->value_top != 0)
 		return (NULL);

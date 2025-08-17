@@ -2,6 +2,7 @@ NAME = json_parser
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+DEBUG_CFLAGS = -DDEBUG
 INCLUDES = -Iincs
 
 # ソースファイル
@@ -21,7 +22,8 @@ SRCS = \
 	$(SRCS_DIR)/json_free.c \
 	$(SRCS_DIR)/json_insert.c \
 	$(SRCS_DIR)/operate_stack.c \
-	$(SRCS_DIR)/init.c
+	$(SRCS_DIR)/init.c \
+	$(SRCS_DIR)/debug.c
 
 # ユーティリティ関数
 UTILS_SRCS = \
@@ -71,6 +73,10 @@ OBJS = $(ALL_SRCS:.c=.o)
 # デフォルトターゲット
 all: $(NAME)
 
+# デバッグビルド
+debug: CFLAGS += $(DEBUG_CFLAGS)
+debug: $(NAME)
+
 # メインターゲット
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
@@ -93,9 +99,10 @@ re: fclean all
 help:
 	@echo "Available targets:"
 	@echo "  all     - Build json_parser"
+	@echo "  debug   - Build json_parser with debug output"
 	@echo "  clean   - Remove object files"
 	@echo "  fclean  - Remove object files and executable"
 	@echo "  re      - Rebuild everything"
 	@echo "  help    - Show this help"
 
-.PHONY: all clean fclean re help
+.PHONY: all debug clean fclean re help
