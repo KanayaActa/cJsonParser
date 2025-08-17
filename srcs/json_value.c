@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "json_value.h"
-#include "parser.h"
+#include "utils.h"
 
 t_json_value	*json_value_new(t_json_type type)
 {

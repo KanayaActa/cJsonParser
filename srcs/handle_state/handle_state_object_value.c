@@ -13,7 +13,7 @@
 #include "json_lexer.h"
 #include "json_parser_stack.h"
 #include "json_value.h"
-#include "parser.h"
+#include "utils.h"
 
 void	parse_obj_value_left_brace(t_json_parser_stack *ps)
 {

@@ -13,7 +13,7 @@
 #include "json_lexer.h"
 #include "json_parser_stack.h"
 #include "json_value.h"
-#include "parser.h"
+#include "utils.h"
 
 void	json_lexer_init(t_json_lexer *lx, const char *src)
 {

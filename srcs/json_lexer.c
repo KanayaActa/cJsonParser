@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "json_lexer.h"
-#include "parser.h"
+#include "utils.h"
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
